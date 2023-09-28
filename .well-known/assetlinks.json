@@ -1,0 +1,12 @@
+[
+    {
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "in.tylerl.meetoo",
+            "sha256_cert_fingerprints": [
+                "32:76:28:6A:8E:07:1B:24:8B:89:AE:1D:1B:77:09:EE:85:7A:84:8A:55:D3:57:2F:F5:96:26:AD:73:2C:44:90"
+            ]
+        }
+    }
+]
