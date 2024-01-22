@@ -24,7 +24,7 @@ export default function Home() {
         <main>
             <section className="md:h-screen ">
                 <div className="flex flex-col md:flex-row max-w-screen-xl mx-auto">
-                    <div className="md:flex flex-col justify-center pl-16 max-md:pr-16 pt-24 md:pb-8">
+                    <div className="md:flex flex-col justify-center pl-8 md:pl-16 max-md:pr-8 pt-24 md:pb-8">
                         <div className="md:pr-4">
                             <h1 className="mb-4 text-4xl lg:text-5xl font-extrabold text-primary">{headline}</h1>
                             <p className="mb-8 text-lg lg:text-xl font-light leading-tight">
@@ -35,14 +35,12 @@ export default function Home() {
                                 Link your <FontAwesomeIcon icon={faGoogle} className="text-muted-foreground" /> Google,{' '}
                                 <FontAwesomeIcon icon={faApple} className="text-muted-foreground" /> iCloud, and{' '}
                                 <FontAwesomeIcon icon={faMicrosoft} className="text-muted-foreground" /> Outlook
-                                calendars to show when you're free or busy—no need to fill in your availability
+                                calendars to show when you&apos;re free or busy—no need to fill in your availability
                                 manually.
                             </p>
                         </div>
-                        <span className="flex flex-wrap max-md:justify-center">
-                            <div className="mr-4 mb-3">
-                                <AppStoreButton />
-                            </div>
+                        <span className="flex flex-wrap gap-3 max-md:justify-center">
+                            <AppStoreButton />
                             <div className="text-center">
                                 <Button disabled>
                                     <ExternalLink size={20} className="mr-2" />
@@ -62,7 +60,7 @@ export default function Home() {
                                     ['meeting.png', 'A screenshot of a meeting page in the meetoo app'],
                                 ].map(([image, alt], index) => (
                                     <CarouselItem key={index}>
-                                        <div className="max-md:max-h-[calc(100vh-8rem)] md:h-[calc(100vh-10rem)] md:min-h-96 my-8 md:my-12 aspect-[685/1366]">
+                                        <div className="md:h-[calc(100vh-12rem)] md:min-h-96 max-md:w-[calc(100vw-8rem)] max-md:max-w-72 my-8 md:my-16 aspect-[685/1366]">
                                             {mounted ? (
                                                 <Image
                                                     src={`/images/${resolvedTheme}/${image}`}
@@ -71,7 +69,7 @@ export default function Home() {
                                                     height={2732}
                                                 />
                                             ) : (
-                                                <Skeleton className="h-full" />
+                                                <Skeleton className="h-full rounded-3xl" />
                                             )}
                                         </div>
                                     </CarouselItem>

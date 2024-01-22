@@ -15,7 +15,7 @@ export default function Redirect({ params }: { params: { slug: string[] } }) {
                         Launching the meetoo app...
                     </h1>
                     <p className="mb-2 font-semibold text-xl lg:text-2xl leading-tight">
-                        If you're not redirected shortly,
+                        If you&apos;re not redirected shortly,
                     </p>
                     <Button className="mb-12" asChild>
                         <Link href={`https://meetoo.app/${params.slug.join('/')}`} replace>
@@ -25,7 +25,7 @@ export default function Redirect({ params }: { params: { slug: string[] } }) {
                         </Link>
                     </Button>
                     <p className="mb-2 text-xl lg:text-2xl leading-tight">
-                        If you don't have the <span className="text-primary font-bold">meetoo</span> app,
+                        If you don&apos;t have the <span className="text-primary font-bold">meetoo</span> app,
                     </p>
                     <div className="mb-12">
                         <AppStoreButton />
