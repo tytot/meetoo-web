@@ -22,7 +22,7 @@ export default function Home() {
 
     return (
         <main>
-            <section className="md:h-screen ">
+            <section className="md:h-dvh">
                 <div className="flex flex-col md:flex-row max-w-screen-xl mx-auto">
                     <div className="md:flex flex-col justify-center pl-8 md:pl-16 max-md:pr-8 pt-24 md:pb-8">
                         <div className="md:pr-4">
@@ -60,7 +60,7 @@ export default function Home() {
                                     ['meeting.png', 'A screenshot of a meeting page in the meetoo app'],
                                 ].map(([image, alt], index) => (
                                     <CarouselItem key={index}>
-                                        <div className="md:h-[calc(100vh-12rem)] md:min-h-96 max-md:w-[calc(100vw-8rem)] max-md:max-w-72 my-8 md:my-16 aspect-[685/1366]">
+                                        <div className="md:h-[calc(100dvh-12rem)] md:min-h-96 max-md:w-[calc(100dvw-8rem)] max-md:max-w-72 my-8 md:my-16 aspect-[685/1366]">
                                             {mounted ? (
                                                 <Image
                                                     src={`/images/${resolvedTheme}/${image}`}
