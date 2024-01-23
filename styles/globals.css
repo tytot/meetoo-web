@@ -69,4 +69,25 @@ h6 {
     body {
         @apply bg-background text-foreground;
     }
+    h1 {
+        @apply mb-4 text-4xl lg:text-5xl font-extrabold;
+    }
+    h2 {
+        @apply mb-1 text-2xl lg:text-3xl font-bold;
+    }
+    h3 {
+        @apply mb-1 text-xl lg:text-2xl font-semibold;
+    }
+    h4 {
+        @apply mb-1 text-lg lg:text-xl font-medium;
+    }
+    p {
+        @apply mb-2 leading-snug;
+    }
+    ul {
+        @apply mb-2 ml-4 list-disc;
+    }
+    ol {
+        @apply mb-2 ml-4 list-decimal;
+    }
 }

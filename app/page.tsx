@@ -26,12 +26,12 @@ export default function Home() {
                 <div className="flex flex-col md:flex-row max-w-screen-xl mx-auto">
                     <div className="md:flex flex-col justify-center pl-8 md:pl-16 max-md:pr-8 pt-24 md:pb-8">
                         <div className="md:pr-4">
-                            <h1 className="mb-4 text-4xl lg:text-5xl font-extrabold text-primary">{headline}</h1>
+                            <h1 className="text-primary">{headline}</h1>
                             <p className="mb-8 text-lg lg:text-xl font-light leading-tight">
                                 <span className="text-primary font-bold">meetoo</span>
                                 {copy.slice(6)}
                             </p>
-                            <p className="mb-6 text-muted-foreground text-md lg:text-lg font-medium !leading-snug">
+                            <p className="mb-6 text-muted-foreground text-md lg:text-lg font-medium">
                                 Link your <FontAwesomeIcon icon={faGoogle} className="text-muted-foreground" /> Google,{' '}
                                 <FontAwesomeIcon icon={faApple} className="text-muted-foreground" /> iCloud, and{' '}
                                 <FontAwesomeIcon icon={faMicrosoft} className="text-muted-foreground" /> Outlook
