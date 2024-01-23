@@ -11,16 +11,11 @@ export default function Redirect({ params }: { params: { slug: string[] } }) {
                     <div className="mb-6 p-6 rounded-[2rem] bg-secondary">
                         <Logo className="h-20 w-20 fill-primary" />
                     </div>
-                    <h1 className="mb-6 text-4xl lg:text-5xl font-bold text-primary animate-pulse">
-                        Launching the meetoo app...
-                    </h1>
-                    <p className="mb-2 font-semibold text-xl lg:text-2xl leading-tight">
-                        If you&apos;re not redirected shortly,
-                    </p>
-                    <Button className="mb-12" asChild>
-                        <Link href={`https://meetoo.app/${params.slug.join('/')}`} replace>
+                    <h1 className="mb-4 text-4xl lg:text-5xl font-bold text-primary">Open in the meetoo app</h1>
+                    <Button className="mb-12 animate-pulse" asChild>
+                        <Link href={`https://meetoo.app/${params.slug.join('/')}`} target="_blank">
                             <span>
-                                Open <span className="font-bold">meetoo</span>
+                                Launch <span className="font-bold">meetoo</span>
                             </span>
                         </Link>
                     </Button>
