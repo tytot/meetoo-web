@@ -1,6 +1,6 @@
 'use client'
 
-import AppStoreButton from '@/components/app-store-button'
+import JoinBetaButton from '@/components/join-beta-button'
 import { Button } from '@/components/ui/button'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import { Skeleton } from '@/components/ui/skeleton'
@@ -40,9 +40,9 @@ export default function Home() {
                             </p>
                         </div>
                         <span className="flex flex-wrap gap-3 max-md:justify-center">
-                            <AppStoreButton />
+                            <JoinBetaButton />
                             <div className="text-center">
-                                <Button disabled>
+                                <Button variant="secondary" disabled>
                                     <ExternalLink size={20} className="mr-2" />
                                     Open in Browser
                                 </Button>
