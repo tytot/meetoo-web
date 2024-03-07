@@ -13,14 +13,17 @@ const nextConfig = {
     async headers() {
         return [
             {
+                source: '*',
                 key: 'X-Frame-Options',
                 value: 'SAMEORIGIN',
             },
             {
+                source: '*',
                 key: 'X-Content-Type-Options',
                 value: 'nosniff',
             },
             {
+                source: '*',
                 key: 'Referrer-Policy',
                 value: 'no-referrer-when-downgrade',
             },
