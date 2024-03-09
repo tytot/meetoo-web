@@ -73,13 +73,13 @@ h6 {
         @apply mb-4 text-4xl lg:text-5xl font-extrabold;
     }
     h2 {
-        @apply mb-1 text-2xl lg:text-3xl font-bold;
+        @apply mt-4 mb-2 text-2xl lg:text-3xl font-bold;
     }
     h3 {
-        @apply mb-1 text-xl lg:text-2xl font-semibold;
+        @apply mt-3 mb-1 text-xl lg:text-2xl font-semibold;
     }
     h4 {
-        @apply mb-1 text-lg lg:text-xl font-medium;
+        @apply mb-1 text-lg lg:text-xl font-semibold;
     }
     p {
         @apply mb-2 leading-snug;
@@ -89,5 +89,10 @@ h6 {
     }
     ol {
         @apply mb-2 ml-4 list-decimal;
+    }
+    article {
+        a {
+            @apply underline hover:text-primary;
+        }
     }
 }

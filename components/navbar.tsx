@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Logo from './logo'
 import ModeToggle from './mode-toggle'
+import { Button } from './ui/button'
 
 export default function Navbar() {
     return (
@@ -11,7 +12,12 @@ export default function Navbar() {
                         <Logo className="h-6 w-6 fill-primary" />
                     </div>
                 </Link>
-                <ModeToggle />
+                <div className="flex items-center space-x-3">
+                    <Button variant="outline" asChild>
+                        <Link href="/privacy-policy">Privacy Policy</Link>
+                    </Button>
+                    <ModeToggle />
+                </div>
             </div>
         </nav>
     )
