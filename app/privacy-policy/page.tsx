@@ -48,8 +48,8 @@ export default function PrivacyPolicy() {
                 </p>
                 <h4 id="limited-use-disclosure">Limited Use</h4>
                 <p>
-                    meetoo's use and transfer to any other app of information received from Google APIs will adhere to
-                    the{' '}
+                    meetoo&apos;s use and transfer to any other app of information received from Google APIs will adhere
+                    to the{' '}
                     <a
                         href="https://developers.google.com/terms/api-services-user-data-policy#additional_requirements_for_specific_api_scopes"
                         target="_blank"
