@@ -1,6 +1,6 @@
 'use client'
 
-import JoinBetaButton from '@/components/join-beta-button'
+import JoinBetaButtons from '@/components/join-beta-buttons'
 import { Button } from '@/components/ui/button'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
 import { Skeleton } from '@/components/ui/skeleton'
@@ -40,14 +40,14 @@ export default function Home() {
                             </p>
                         </div>
                         <span className="flex flex-wrap gap-3 max-md:justify-center">
-                            <JoinBetaButton />
-                            <div className="text-center">
+                            <JoinBetaButtons />
+                            {/* <div className="text-center">
                                 <Button variant="secondary" disabled>
                                     <ExternalLink size={20} className="mr-2" />
                                     Open in Browser
                                 </Button>
                                 <div className="mt-1 text-sm font-semibold">Coming soon!</div>
-                            </div>
+                            </div> */}
                         </span>
                     </div>
                     <div className="px-16 md:pr-24 md:pt-16 mx-auto max-w-full overflow-hidden">

@@ -1,4 +1,4 @@
-import JoinBetaButton from '@/components/join-beta-button'
+import JoinBetaButtons from '@/components/join-beta-buttons'
 import Logo from '@/components/logo'
 import { Button } from '@/components/ui/button'
 import { Rocket } from 'lucide-react'
@@ -22,11 +22,11 @@ export default function Redirect({ params }: { params: { slug: string[] } }) {
                         </Link>
                     </Button>
 
-                    <p className="text-xl lg:text-2xl leading-tight">
+                    <p className="text-xl lg:text-2xl leading-tight mb-4">
                         If you don&apos;t have the <span className="text-primary font-bold">meetoo</span> app,
                     </p>
                     <div className="mb-12">
-                        <JoinBetaButton secondary />
+                        <JoinBetaButtons secondary />
                     </div>
                 </div>
             </div>
