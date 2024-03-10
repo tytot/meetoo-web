@@ -6,7 +6,7 @@ import { faAndroid, faAppStore, faApple, faGooglePlay } from '@fortawesome/free-
 
 export default function JoinBetaButtons({ secondary }: { secondary?: boolean | undefined }) {
     return (
-        <div className="flex space-x-6">
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-4">
             <div className="flex flex-col items-center">
                 <span className="font-bold text-lg leading-tight mb-1">
                     <FontAwesomeIcon icon={faApple} className="mr-2" />
