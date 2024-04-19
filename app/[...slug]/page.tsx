@@ -8,9 +8,12 @@ import { headers } from 'next/headers'
 import Link from 'next/link'
 
 export async function generateMetadata(): Promise<Metadata> {
-    const pathname = headers().get('pathname')!
+    const pathname = headers().get('x-pathname')!
     const url = `https://meetoo.app${pathname}`
     return {
+        title: {
+            absolute: 'Open in the meetoo app',
+        },
         itunes: {
             appId: appStoreId,
             appArgument: url,
