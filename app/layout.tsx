@@ -16,8 +16,20 @@ const fontSerif = FontSerif({ weight: '400', subsets: ['latin'], variable: '--fo
 const fontMono = FontMono({ subsets: ['latin'], variable: '--font-mono', display: 'swap' })
 
 export const metadata: Metadata = {
-    title: 'meetoo',
+    title: {
+        template: '%s | meetoo',
+        default: 'meetoo',
+    },
     description: copy,
+    applicationName: 'meetoo',
+    authors: [
+        {
+            name: 'Tyler Lin',
+            url: 'https://tylerl.in',
+        },
+    ],
+    creator: 'Tyler Lin',
+    metadataBase: new URL('https://meetoo.app'),
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

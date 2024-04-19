@@ -1,8 +1,34 @@
 import JoinBetaButtons from '@/components/join-beta-buttons'
 import Logo from '@/components/logo'
 import { Button } from '@/components/ui/button'
+import { appStoreId } from '@/lib/constants'
 import { Rocket } from 'lucide-react'
+import { Metadata } from 'next'
+import { headers } from 'next/headers'
 import Link from 'next/link'
+
+export async function generateMetadata(): Promise<Metadata> {
+    const pathname = headers().get('pathname')!
+    const url = `https://meetoo.app${pathname}`
+    return {
+        itunes: {
+            appId: appStoreId,
+            appArgument: url,
+        },
+        appLinks: {
+            ios: {
+                url,
+                app_store_id: appStoreId,
+                app_name: 'meetoo',
+            },
+            android: {
+                url,
+                package: 'in.tylerl.meetoo',
+                app_name: 'meetoo',
+            },
+        },
+    }
+}
 
 export default function Redirect({ params }: { params: { slug: string[] } }) {
     return (

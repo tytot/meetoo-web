@@ -1,25 +1,14 @@
-'use client'
-
+import HeroCarousel from '@/components/HeroCarousel'
 import JoinBetaButtons from '@/components/join-beta-buttons'
-import { Button } from '@/components/ui/button'
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
-import { Skeleton } from '@/components/ui/skeleton'
-import { copy, headline } from '@/lib/constants'
+import { copy, headline, keywords } from '@/lib/constants'
 import { faApple, faGoogle, faMicrosoft } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { ExternalLink } from 'lucide-react'
-import { useTheme } from 'next-themes'
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
+
+export const metadata = {
+    keywords: keywords,
+}
 
 export default function Home() {
-    const [mounted, setMounted] = useState(false)
-    const { resolvedTheme } = useTheme()
-
-    useEffect(() => {
-        setMounted(true)
-    }, [])
-
     return (
         <main>
             <section className="md:h-dvh">
@@ -51,33 +40,7 @@ export default function Home() {
                         </span>
                     </div>
                     <div className="px-16 md:pr-24 md:pt-16 mx-auto max-w-full overflow-hidden">
-                        <Carousel>
-                            <CarouselContent>
-                                {[
-                                    ['friend.png', 'A screenshot of a friend page in the meetoo app'],
-                                    ['scheduler.png', 'A screenshot of the scheduler screen in the meetoo app'],
-                                    ['timeline.png', 'A screenshot of the meeting timeline view in the meetoo app'],
-                                    ['meeting.png', 'A screenshot of a meeting page in the meetoo app'],
-                                ].map(([image, alt], index) => (
-                                    <CarouselItem key={index}>
-                                        <div className="md:h-[calc(100dvh-12rem)] md:min-h-96 max-md:w-[calc(100dvw-8rem)] max-md:max-w-72 my-8 md:my-16 aspect-[685/1366]">
-                                            {mounted ? (
-                                                <Image
-                                                    src={`/images/${resolvedTheme}/${image}`}
-                                                    alt={alt}
-                                                    width={1370}
-                                                    height={2732}
-                                                />
-                                            ) : (
-                                                <Skeleton className="h-full rounded-3xl" />
-                                            )}
-                                        </div>
-                                    </CarouselItem>
-                                ))}
-                            </CarouselContent>
-                            <CarouselPrevious />
-                            <CarouselNext />
-                        </Carousel>
+                        <HeroCarousel />
                     </div>
                 </div>
             </section>
