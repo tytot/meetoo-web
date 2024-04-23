@@ -6,7 +6,9 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { Menu } from 'lucide-react'
 
 const links = [
+    // eslint-disable-next-line react/jsx-key
     <Link href="/privacy-policy">Privacy Policy</Link>,
+    // eslint-disable-next-line react/jsx-key
     <a href="mailto:contact@meetoo.app" target="_blank">
         Contact Support
     </a>,
