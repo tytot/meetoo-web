@@ -1,4 +1,4 @@
-import HeroCarousel from '@/components/HeroCarousel'
+import HeroCarousel from '@/components/hero-carousel'
 import JoinBetaButtons from '@/components/join-beta-buttons'
 import { copy, headline, keywords } from '@/lib/constants'
 import { faApple, faGoogle, faMicrosoft } from '@fortawesome/free-brands-svg-icons'

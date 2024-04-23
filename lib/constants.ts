@@ -1,3 +1,5 @@
+export const wwwHostname = 'https://www.meetoo.app'
+
 export const publicPaths = [
     { path: '/', priority: 1 },
     { path: '/privacy-policy', priority: 0.5 },

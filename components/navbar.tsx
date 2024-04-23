@@ -2,6 +2,15 @@ import Link from 'next/link'
 import Logo from './logo'
 import ModeToggle from './mode-toggle'
 import { Button } from './ui/button'
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu'
+import { Menu } from 'lucide-react'
+
+const links = [
+    <Link href="/privacy-policy">Privacy Policy</Link>,
+    <a href="mailto:contact@meetoo.app" target="_blank">
+        Contact Support
+    </a>,
+]
 
 export default function Navbar() {
     return (
@@ -13,10 +22,29 @@ export default function Navbar() {
                     </div>
                 </Link>
                 <div className="flex items-center space-x-3">
-                    <Button variant="outline" asChild>
-                        <Link href="/privacy-policy">Privacy Policy</Link>
-                    </Button>
+                    <div className="hidden sm:flex">
+                        {links.map((link, index) => (
+                            <Button key={index} variant="ghost" asChild>
+                                {link}
+                            </Button>
+                        ))}
+                    </div>
                     <ModeToggle />
+                    <div className="block sm:hidden">
+                        <DropdownMenu>
+                            <DropdownMenuTrigger asChild>
+                                <Button variant="outline" size="icon">
+                                    <Menu className="h-[1.2rem] w-[1.2rem]" />
+                                    <span className="sr-only">Open menu</span>
+                                </Button>
+                            </DropdownMenuTrigger>
+                            <DropdownMenuContent align="end">
+                                {links.map((link, index) => (
+                                    <DropdownMenuItem key={index}>{link}</DropdownMenuItem>
+                                ))}
+                            </DropdownMenuContent>
+                        </DropdownMenu>
+                    </div>
                 </div>
             </div>
         </nav>

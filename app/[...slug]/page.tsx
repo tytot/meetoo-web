@@ -1,11 +1,9 @@
+import LaunchButton from '@/components/launch-button'
 import JoinBetaButtons from '@/components/join-beta-buttons'
 import Logo from '@/components/logo'
-import { Button } from '@/components/ui/button'
 import { appStoreId } from '@/lib/constants'
-import { Rocket } from 'lucide-react'
 import { Metadata } from 'next'
 import { headers } from 'next/headers'
-import Link from 'next/link'
 
 export async function generateMetadata(): Promise<Metadata> {
     const pathname = headers().get('x-pathname')!
@@ -33,7 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
     }
 }
 
-export default function Redirect({ params }: { params: { slug: string[] } }) {
+export default function Redirect() {
     return (
         <main className="h-dvh pt-16">
             <div className="flex px-12 py-8 h-full overflow-auto">
@@ -42,15 +40,9 @@ export default function Redirect({ params }: { params: { slug: string[] } }) {
                         <Logo className="h-20 w-20 fill-primary" />
                     </div>
                     <h1 className="text-primary">Open in the meetoo app</h1>
-                    <Button className="mb-12 animate-pulse" asChild>
-                        <Link href={`https://www.meetoo.app/${params.slug.join('/')}`} target="_blank">
-                            <Rocket size={20} className="mr-2" />
-                            <span>
-                                Launch <span className="font-bold">meetoo</span>
-                            </span>
-                        </Link>
-                    </Button>
-
+                    <div className="mb-12">
+                        <LaunchButton />
+                    </div>
                     <p className="text-xl lg:text-2xl leading-tight mb-4">
                         If you don&apos;t have the <span className="text-primary font-bold">meetoo</span> app,
                     </p>
