@@ -1,16 +1,22 @@
 import LaunchButton from '@/components/launch-button'
 import JoinBetaButtons from '@/components/join-beta-buttons'
 import Logo from '@/components/logo'
-import { appStoreId } from '@/lib/constants'
+import { appStoreId, uuidRegex } from '@/lib/constants'
 import { Metadata } from 'next'
 import { headers } from 'next/headers'
 
 export async function generateMetadata(): Promise<Metadata> {
     const pathname = headers().get('x-pathname')!
     const url = `https://meetoo.app${pathname}`
+
+    let profileUsername
+    if (pathname.startsWith('/profile/') && !uuidRegex.test(pathname.slice(9))) {
+        profileUsername = pathname.slice(9)
+    }
+
     return {
         title: {
-            absolute: 'Open in the meetoo app',
+            absolute: profileUsername ? `@${profileUsername}'s Profile | meetoo` : 'Open in the meetoo app',
         },
         itunes: {
             appId: appStoreId,

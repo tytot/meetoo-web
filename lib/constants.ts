@@ -83,3 +83,5 @@ export const keywords = [
 export const appStoreId = '6463820661'
 export const appStoreUrl = 'https://testflight.apple.com/join/bEVv7R3F'
 export const playStoreUrl = 'https://play.google.com/store/apps/details?id=in.tylerl.meetoo'
+
+export const uuidRegex = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/
