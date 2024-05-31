@@ -9,9 +9,7 @@ const links = [
     // eslint-disable-next-line react/jsx-key
     <Link href="/privacy-policy">Privacy Policy</Link>,
     // eslint-disable-next-line react/jsx-key
-    <a href="mailto:contact@meetoo.app" target="_blank">
-        Contact Support
-    </a>,
+    <Link href="/support">Contact Support</Link>,
 ]
 
 export default function Navbar() {

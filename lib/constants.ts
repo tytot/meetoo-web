@@ -80,6 +80,8 @@ export const keywords = [
     'view when friends are busy',
 ]
 
+export const supportEmail = 'contact@meetoo.app'
+
 export const appStoreId = '6463820661'
 export const appStoreUrl = 'https://testflight.apple.com/join/bEVv7R3F'
 export const playStoreUrl = 'https://play.google.com/store/apps/details?id=in.tylerl.meetoo'
