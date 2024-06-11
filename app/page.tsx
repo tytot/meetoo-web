@@ -1,5 +1,5 @@
+import DownloadButtons from '@/components/download-buttons'
 import HeroCarousel from '@/components/hero-carousel'
-import JoinBetaButtons from '@/components/join-beta-buttons'
 import { copy, headline, keywords } from '@/lib/constants'
 import { faApple, faGoogle, faMicrosoft } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -29,7 +29,7 @@ export default function Home() {
                             </p>
                         </div>
                         <span className="flex flex-wrap gap-3 max-md:justify-center">
-                            <JoinBetaButtons />
+                            <DownloadButtons />
                             {/* <div className="text-center">
                                 <Button variant="secondary" disabled>
                                     <ExternalLink size={20} className="mr-2" />

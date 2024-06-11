@@ -1,5 +1,5 @@
+import DownloadButtons from '@/components/download-buttons'
 import LaunchButton from '@/components/launch-button'
-import JoinBetaButtons from '@/components/join-beta-buttons'
 import Logo from '@/components/logo'
 import { appStoreId, uuidRegex } from '@/lib/constants'
 import { Metadata } from 'next'
@@ -53,7 +53,7 @@ export default function Redirect() {
                         If you don&apos;t have the <span className="text-primary font-bold">meetoo</span> app,
                     </p>
                     <div className="mb-12">
-                        <JoinBetaButtons secondary />
+                        <DownloadButtons secondary />
                     </div>
                 </div>
             </div>

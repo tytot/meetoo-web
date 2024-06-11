@@ -83,7 +83,7 @@ export const keywords = [
 export const supportEmail = 'contact@meetoo.app'
 
 export const appStoreId = '6463820661'
-export const appStoreUrl = 'https://testflight.apple.com/join/bEVv7R3F'
+export const appStoreUrl = 'https://apps.apple.com/app/meetoo/id6463820661'
 export const playStoreUrl = 'https://play.google.com/store/apps/details?id=in.tylerl.meetoo'
 
 export const uuidRegex = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/
