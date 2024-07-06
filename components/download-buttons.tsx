@@ -1,35 +1,18 @@
-import { appStoreUrl, playStoreUrl } from '@/lib/constants'
+import { appStoreUrl, googlePlayUrl } from '@/lib/constants'
 import Link from 'next/link'
-import { Button } from './ui/button'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAndroid, faApple, faGooglePlay } from '@fortawesome/free-brands-svg-icons'
 import appStoreBadge from '@/app/images/app-store-badge.svg'
+import googlePlayBadge from '@/app/images/google-play-badge.png'
 import Image from 'next/image'
 
-export default function DownloadButtons({ secondary }: { secondary?: boolean | undefined }) {
+export default function DownloadButtons() {
     return (
-        <div className="flex flex-wrap justify-center gap-x-6 gap-y-4">
-            <div className="flex flex-col items-center">
-                <span className="font-bold text-lg leading-tight mb-1">
-                    <FontAwesomeIcon icon={faApple} className="mr-2" />
-                    iOS
-                </span>
-                <Link href={appStoreUrl} target="_blank">
-                    <Image src={appStoreBadge} alt="Download on the App Store badge" />
-                </Link>
-            </div>
-            <div className="flex flex-col items-center">
-                <span className="font-bold text-lg leading-tight mb-1">
-                    <FontAwesomeIcon icon={faAndroid} className="mr-2" />
-                    Android
-                </span>
-                <Button variant={secondary ? 'secondary' : 'default'} asChild>
-                    <Link href={playStoreUrl} target="_blank">
-                        <FontAwesomeIcon icon={faGooglePlay} size="lg" className="mr-2" />
-                        Join the Beta
-                    </Link>
-                </Button>
-            </div>
+        <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-3">
+            <Link href={appStoreUrl} target="_blank">
+                <Image src={appStoreBadge} alt="Download on the App Store badge" height={48} />
+            </Link>
+            <Link href={googlePlayUrl} target="_blank">
+                <Image src={googlePlayBadge} alt="Download on the App Store badge" height={48} />
+            </Link>
         </div>
     )
 }

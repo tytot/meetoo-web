@@ -20,7 +20,7 @@ export default function Home() {
                                 <span className="text-primary font-bold">meetoo</span>
                                 {copy.slice(6)}
                             </p>
-                            <p className="mb-6 text-muted-foreground text-md lg:text-lg font-medium">
+                            <p className="mb-8 text-muted-foreground text-md lg:text-lg font-medium">
                                 Link your <FontAwesomeIcon icon={faGoogle} className="text-muted-foreground" /> Google,{' '}
                                 <FontAwesomeIcon icon={faApple} className="text-muted-foreground" /> iCloud, and{' '}
                                 <FontAwesomeIcon icon={faMicrosoft} className="text-muted-foreground" /> Outlook

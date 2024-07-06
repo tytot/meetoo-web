@@ -53,7 +53,7 @@ export default function Redirect() {
                         If you don&apos;t have the <span className="text-primary font-bold">meetoo</span> app,
                     </p>
                     <div className="mb-12">
-                        <DownloadButtons secondary />
+                        <DownloadButtons />
                     </div>
                 </div>
             </div>
