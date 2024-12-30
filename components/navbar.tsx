@@ -7,10 +7,13 @@ import { Menu } from 'lucide-react';
 import { supportEmail } from '@/lib/constants';
 
 const links = [
+    // eslint-disable-next-line react/jsx-key
     <Link href="/">Home</Link>,
+    // eslint-disable-next-line react/jsx-key
     <a href={`mailto:${supportEmail}`} target="_blank">
         Contact
     </a>,
+    // eslint-disable-next-line react/jsx-key
     <Link href="/download">Download</Link>,
 ];
 

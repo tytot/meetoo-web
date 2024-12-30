@@ -4,15 +4,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faLinkedinIn, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import { instagramUrl, linkedinUrl, tiktokUrl } from '@/lib/constants';
 
-const siteLinks = [<Link href="/privacy-policy">Privacy Policy</Link>, <Link href="/support">Support</Link>];
+const siteLinks = [
+    // eslint-disable-next-line react/jsx-key
+    <Link href="/privacy-policy">Privacy Policy</Link>,
+    // eslint-disable-next-line react/jsx-key
+    <Link href="/support">Support</Link>,
+];
 
 const socialLinks = [
+    // eslint-disable-next-line react/jsx-key
     <a href={tiktokUrl} target="_blank">
         <FontAwesomeIcon icon={faTiktok} size="lg" />
     </a>,
+    // eslint-disable-next-line react/jsx-key
     <a href={instagramUrl} target="_blank">
         <FontAwesomeIcon icon={faInstagram} size="lg" />
     </a>,
+    // eslint-disable-next-line react/jsx-key
     <a href={linkedinUrl} target="_blank">
         <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
     </a>,
