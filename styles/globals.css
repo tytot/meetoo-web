@@ -4,6 +4,7 @@
 
 html {
     font-family: var(--font-sans);
+    height: 100%;
 }
 
 h1,

@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { Button } from './ui/button'
 import { Rocket } from 'lucide-react'
 import { usePathname, useSearchParams } from 'next/navigation'
@@ -18,7 +17,7 @@ export default function LaunchButton() {
     }, [pathname, searchParams])
 
     return (
-        <Button className="animate-pulse" asChild>
+        <Button className="animate-pulse h-12 text-lg" asChild>
             <a href={url ?? wwwHostname} target="_blank">
                 <Rocket size={20} className="mr-2" />
                 <span>

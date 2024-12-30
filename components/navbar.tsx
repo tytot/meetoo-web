@@ -1,16 +1,18 @@
-import Link from 'next/link'
-import Logo from './logo'
-import ModeToggle from './mode-toggle'
-import { Button } from './ui/button'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu'
-import { Menu } from 'lucide-react'
+import Link from 'next/link';
+import Logo from './logo';
+import ModeToggle from './mode-toggle';
+import { Button } from './ui/button';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu';
+import { Menu } from 'lucide-react';
+import { supportEmail } from '@/lib/constants';
 
 const links = [
-    // eslint-disable-next-line react/jsx-key
-    <Link href="/privacy-policy">Privacy Policy</Link>,
-    // eslint-disable-next-line react/jsx-key
-    <Link href="/support">Contact Support</Link>,
-]
+    <Link href="/">Home</Link>,
+    <a href={`mailto:${supportEmail}`} target="_blank">
+        Contact
+    </a>,
+    <Link href="/download">Download</Link>,
+];
 
 export default function Navbar() {
     return (
@@ -48,5 +50,5 @@ export default function Navbar() {
                 </div>
             </div>
         </nav>
-    )
+    );
 }

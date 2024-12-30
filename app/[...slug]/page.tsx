@@ -1,17 +1,17 @@
-import DownloadButtons from '@/components/download-buttons'
-import LaunchButton from '@/components/launch-button'
-import Logo from '@/components/logo'
-import { appStoreId, uuidRegex } from '@/lib/constants'
-import { Metadata } from 'next'
-import { headers } from 'next/headers'
+import DownloadButtons from '@/components/download-buttons';
+import LaunchButton from '@/components/launch-button';
+import Logo from '@/components/logo';
+import { appStoreId, uuidRegex } from '@/lib/constants';
+import { Metadata } from 'next';
+import { headers } from 'next/headers';
 
 export async function generateMetadata(): Promise<Metadata> {
-    const pathname = headers().get('x-pathname')!
-    const url = `https://meetoo.app${pathname}`
+    const pathname = headers().get('x-pathname')!;
+    const url = `https://meetoo.app${pathname}`;
 
-    let profileUsername
+    let profileUsername;
     if (pathname.startsWith('/profile/') && !uuidRegex.test(pathname.slice(9))) {
-        profileUsername = pathname.slice(9)
+        profileUsername = pathname.slice(9);
     }
 
     return {
@@ -34,22 +34,22 @@ export async function generateMetadata(): Promise<Metadata> {
                 app_name: 'meetoo',
             },
         },
-    }
+    };
 }
 
 export default function Redirect() {
     return (
-        <main className="h-dvh pt-16">
+        <main className="h-full">
             <div className="flex px-12 py-8 h-full overflow-auto">
                 <div className="flex flex-col m-auto items-center text-center">
                     <div className="mb-6 p-6 rounded-[2rem] bg-secondary">
                         <Logo className="h-20 w-20 fill-primary" />
                     </div>
-                    <h1 className="text-primary">Open in the meetoo app</h1>
+                    <h1 className="text-primary text-3xl leading-8 mb-5">Open in the meetoo app</h1>
                     <div className="mb-12">
                         <LaunchButton />
                     </div>
-                    <p className="text-xl lg:text-2xl leading-tight mb-4">
+                    <p className="text-xl leading-tight mb-4">
                         If you don&apos;t have the <span className="text-primary font-bold">meetoo</span> app,
                     </p>
                     <div className="mb-12">
@@ -58,5 +58,5 @@ export default function Redirect() {
                 </div>
             </div>
         </main>
-    )
+    );
 }

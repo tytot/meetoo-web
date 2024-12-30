@@ -5,6 +5,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Skeleton } from './ui/skeleton'
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
+import styles from '../styles/hero-carousel.module.css'
 
 export default function HeroCarousel() {
     const [mounted, setMounted] = useState(false)
@@ -16,7 +17,7 @@ export default function HeroCarousel() {
 
     return (
         <Carousel>
-            <CarouselContent>
+            <CarouselContent className={styles.content}>
                 {[
                     ['friend.png', 'A screenshot of a friend page in the meetoo app'],
                     ['scheduler.png', 'A screenshot of the scheduler screen in the meetoo app'],

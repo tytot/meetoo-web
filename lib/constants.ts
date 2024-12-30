@@ -86,4 +86,8 @@ export const appStoreId = '6463820661'
 export const appStoreUrl = 'https://apps.apple.com/app/meetoo/id6463820661'
 export const googlePlayUrl = 'https://play.google.com/store/apps/details?id=in.tylerl.meetoo'
 
+export const tiktokUrl = 'https://www.tiktok.com/@meetooapp'
+export const instagramUrl = 'https://www.instagram.com/meetooapp'
+export const linkedinUrl = 'https://www.linkedin.com/company/meetoo-app'
+
 export const uuidRegex = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/

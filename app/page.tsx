@@ -11,9 +11,9 @@ export const metadata = {
 export default function Home() {
     return (
         <main>
-            <section className="md:h-dvh">
+            <section>
                 <div className="flex flex-col md:flex-row max-w-screen-xl mx-auto">
-                    <div className="md:flex flex-col justify-center pl-8 md:pl-16 max-md:pr-8 pt-24 md:pb-8">
+                    <div className="md:flex flex-col justify-center pl-8 md:pl-16 max-md:pr-8 pt-8 md:pb-8">
                         <div className="md:pr-4">
                             <h1 className="text-primary">{headline}</h1>
                             <p className="mb-8 text-lg lg:text-xl font-light leading-tight">
@@ -30,16 +30,9 @@ export default function Home() {
                         </div>
                         <span className="flex flex-wrap gap-3 max-md:justify-center">
                             <DownloadButtons />
-                            {/* <div className="text-center">
-                                <Button variant="secondary" disabled>
-                                    <ExternalLink size={20} className="mr-2" />
-                                    Open in Browser
-                                </Button>
-                                <div className="mt-1 text-sm font-semibold">Coming soon!</div>
-                            </div> */}
                         </span>
                     </div>
-                    <div className="px-16 md:pr-24 md:pt-16 mx-auto max-w-full overflow-hidden">
+                    <div className="px-16 md:pr-24 mx-auto max-w-full overflow-hidden">
                         <HeroCarousel />
                     </div>
                 </div>
