@@ -1,20 +1,20 @@
-'use client'
+'use client';
 
-import { Button } from './ui/button'
-import { Rocket } from 'lucide-react'
-import { usePathname, useSearchParams } from 'next/navigation'
-import { useEffect, useState } from 'react'
-import { wwwHostname } from '@/lib/constants'
+import { Button } from './ui/button';
+import { Rocket } from 'lucide-react';
+import { usePathname, useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { wwwHostname } from '@/lib/constants';
 
 export default function LaunchButton() {
-    const pathname = usePathname()
-    const searchParams = useSearchParams()
-    const [url, setUrl] = useState<string | null>(null)
+    const pathname = usePathname();
+    const searchParams = useSearchParams();
+    const [url, setUrl] = useState<string | null>(null);
 
     useEffect(() => {
-        const url = `${wwwHostname}${pathname}?${searchParams}`
-        setUrl(url)
-    }, [pathname, searchParams])
+        const url = `${wwwHostname}${pathname}?${searchParams}`;
+        setUrl(url);
+    }, [pathname, searchParams]);
 
     return (
         <Button className="animate-pulse h-12 text-lg" asChild>
@@ -25,5 +25,5 @@ export default function LaunchButton() {
                 </span>
             </a>
         </Button>
-    )
+    );
 }
