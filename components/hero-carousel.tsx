@@ -43,7 +43,7 @@ export default function HeroCarousel() {
                     <CarouselItem key={index}>
                         <div className="md:h-[calc(100dvh-12rem)] md:min-h-96 max-md:w-[calc(100dvw-8rem)] max-md:max-w-72 my-8 md:my-16 aspect-[685/1366]">
                             {mounted ? (
-                                <Image src={image} alt={imageAlts[index]} placeholder="blur" priority={true} />
+                                <Image src={image} alt={imageAlts[index]} priority={true} />
                             ) : (
                                 <Skeleton className="h-full rounded-3xl" />
                             )}
