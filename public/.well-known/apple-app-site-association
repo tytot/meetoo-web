@@ -5,6 +5,7 @@
             {
                 "appID": "DWP89CGSCJ.in.tylerl.meetoo",
                 "paths": [
+                    "NOT /reset-password/",
                     "*"
                 ]
             }
