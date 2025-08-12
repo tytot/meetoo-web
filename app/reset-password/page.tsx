@@ -15,7 +15,7 @@ import { useSearchParams } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
 import { toast } from 'sonner';
 import { FunctionsHttpError } from '@supabase/supabase-js';
-import Link from 'next/link';
+import { wwwHostname } from '@/lib/constants';
 
 const PasswordFormSchema = z
     .object({
@@ -110,7 +110,9 @@ export default function ResetPasswordPage() {
                         }}
                         asChild
                     >
-                        <Link href="/login">Login</Link>
+                        <a href={`${wwwHostname}/login`} target="_blank">
+                            Login
+                        </a>
                     </Button>
                 </span>,
                 {
