@@ -110,7 +110,7 @@ export default function ResetPasswordPage() {
                         }}
                         asChild
                     >
-                        <a href={`${wwwHostname}/login`} target="_blank">
+                        <a href={wwwHostname} target="_blank">
                             Login
                         </a>
                     </Button>
