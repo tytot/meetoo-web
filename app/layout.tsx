@@ -9,6 +9,7 @@ import Navbar from '@/components/navbar';
 import ThemeProvider from '@/components/theme-provider';
 import { Analytics } from '@vercel/analytics/react';
 import Footer from '@/components/footer';
+import { Toaster } from '@/components/ui/sonner';
 
 config.autoAddCss = false;
 
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <Navbar />
                     <div className="min-h-dvh h-full flex flex-col">
                         <div className="grow pt-16">{children}</div>
+                        <Toaster richColors position="top-right" />
                         <Footer />
                     </div>
                     <Analytics />
