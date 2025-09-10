@@ -20,8 +20,8 @@ export default function PrivacyPolicy() {
                 <h2>App-Specific Content</h2>
                 <p>
                     Content that you create within meetoo may be stored in a remote database. App-specific content is
-                    only shared with users who need to see it. It is not accessible by other users. For example, meeting
-                    information is only shared with other meeting participants, and a friend request is only shared with
+                    only shared with users who need to see it. It is not accessible by other users. For example, meetup
+                    information is only shared with other meetup participants, and a friend request is only shared with
                     the user whom you request.
                 </p>
                 <h2>Data from Third-Parties</h2>

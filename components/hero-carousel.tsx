@@ -19,8 +19,8 @@ import timelineImageLight from '../public/images/light/timeline.png';
 const imageAlts = [
     'A screenshot of a friend page in the meetoo app',
     'A screenshot of the scheduler screen in the meetoo app',
-    'A screenshot of the meeting timeline view in the meetoo app',
-    'A screenshot of a meeting page in the meetoo app',
+    'A screenshot of the meetup timeline view in the meetoo app',
+    'A screenshot of a meetup page in the meetoo app',
 ];
 
 export default function HeroCarousel() {
