@@ -9,31 +9,33 @@ import { headers } from 'next/headers';
 export async function generateMetadata(): Promise<Metadata> {
     const pathname = headers().get('x-pathname')!;
     const urlString = `https://meetoo.app${pathname}`;
-    const url = URL.parse(urlString);
 
     let title = defaultMetadataTitle;
     let description = undefined;
 
-    if (url?.pathname.startsWith('/profile/')) {
-        const slug = url.pathname.slice(9);
-        if (uuidRegex.test(slug)) {
-            const profile = await tryGetProfileById(slug);
-            if (profile) {
-                title = getTitleForProfile(profile);
+    if (URL.canParse(urlString)) {
+        const url = new URL(urlString);
+        if (url.pathname.startsWith('/profile/')) {
+            const slug = url.pathname.slice(9);
+            if (uuidRegex.test(slug)) {
+                const profile = await tryGetProfileById(slug);
+                if (profile) {
+                    title = getTitleForProfile(profile);
+                }
+            } else if (usernameRegex.test(slug)) {
+                const profile = await tryGetProfileByUsername(slug);
+                if (profile) {
+                    title = getTitleForProfile(profile);
+                }
             }
-        } else if (usernameRegex.test(slug)) {
-            const profile = await tryGetProfileByUsername(slug);
-            if (profile) {
-                title = getTitleForProfile(profile);
-            }
-        }
-    } else if (url?.pathname.startsWith('/meeting/') || url?.pathname.startsWith('/meetup/')) {
-        const slug = url.pathname.slice(9);
-        if (uuidRegex.test(slug)) {
-            const meeting = await tryGetMeetingById(slug);
-            if (meeting) {
-                title = getTitleForMeeting(meeting);
-                description = meeting.description;
+        } else if (url.pathname.startsWith('/meeting/') || url.pathname.startsWith('/meetup/')) {
+            const slug = url.pathname.slice(9);
+            if (uuidRegex.test(slug)) {
+                const meeting = await tryGetMeetingById(slug);
+                if (meeting) {
+                    title = getTitleForMeeting(meeting);
+                    description = meeting.description;
+                }
             }
         }
     }
