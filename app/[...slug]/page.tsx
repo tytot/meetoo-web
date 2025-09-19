@@ -1,35 +1,60 @@
 import DownloadButtons from '@/components/download-buttons';
 import LaunchButton from '@/components/launch-button';
 import Logo from '@/components/logo';
-import { appStoreId, uuidRegex } from '@/lib/constants';
+import { appStoreId, defaultMetadataTitle, usernameRegex, uuidRegex } from '@/lib/constants';
+import { supabase } from '@/lib/supabase';
 import { Metadata } from 'next';
 import { headers } from 'next/headers';
 
 export async function generateMetadata(): Promise<Metadata> {
     const pathname = headers().get('x-pathname')!;
-    const url = `https://meetoo.app${pathname}`;
+    const urlString = `https://meetoo.app${pathname}`;
+    const url = URL.parse(urlString);
 
-    let profileUsername;
-    if (pathname.startsWith('/profile/') && !uuidRegex.test(pathname.slice(9))) {
-        profileUsername = pathname.slice(9);
+    let title = defaultMetadataTitle;
+    let description = undefined;
+
+    if (url?.pathname.startsWith('/profile/')) {
+        const slug = url.pathname.slice(9);
+        if (uuidRegex.test(slug)) {
+            const profile = await tryGetProfileById(slug);
+            if (profile) {
+                title = getTitleForProfile(profile);
+            }
+        } else if (usernameRegex.test(slug)) {
+            const profile = await tryGetProfileByUsername(slug);
+            if (profile) {
+                title = getTitleForProfile(profile);
+            }
+        }
+    } else if (url?.pathname.startsWith('/meeting/') || url?.pathname.startsWith('/meetup/')) {
+        const slug = url.pathname.slice(9);
+        if (uuidRegex.test(slug)) {
+            const meeting = await tryGetMeetingById(slug);
+            if (meeting) {
+                title = getTitleForMeeting(meeting);
+                description = meeting.description;
+            }
+        }
     }
 
     return {
         title: {
-            absolute: profileUsername ? `@${profileUsername}'s Profile | meetoo` : 'Open in the meetoo app',
+            absolute: title,
         },
+        description: description,
         itunes: {
             appId: appStoreId,
-            appArgument: url,
+            appArgument: urlString,
         },
         appLinks: {
             ios: {
-                url,
+                url: urlString,
                 app_store_id: appStoreId,
                 app_name: 'meetoo',
             },
             android: {
-                url,
+                url: urlString,
                 package: 'in.tylerl.meetoo',
                 app_name: 'meetoo',
             },
@@ -59,4 +84,35 @@ export default function Redirect() {
             </div>
         </main>
     );
+}
+
+async function tryGetProfileById(profileId: string) {
+    const { data } = await supabase
+        .from('profile')
+        .select('first_name,last_name,username')
+        .eq('id', profileId)
+        .single();
+    return data;
+}
+
+async function tryGetProfileByUsername(username: string) {
+    const { data } = await supabase
+        .from('profile')
+        .select('first_name,last_name,username')
+        .eq('username', username)
+        .single();
+    return data;
+}
+
+function getTitleForProfile(profile: { first_name: string; last_name: string; username: string }) {
+    return `${profile.first_name} ${profile.last_name} (@${profile.username}) | meetoo`;
+}
+
+async function tryGetMeetingById(meetingId: string) {
+    const { data } = await supabase.from('meeting').select('title,emoji,description').eq('id', meetingId).single();
+    return data;
+}
+
+function getTitleForMeeting(meeting: { title: string; emoji: string }) {
+    return `${meeting.emoji} ${meeting.title} | meetoo`;
 }

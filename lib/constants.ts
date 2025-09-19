@@ -5,6 +5,8 @@ export const publicPaths = [
     { path: '/privacy-policy', priority: 0.5 },
 ];
 
+export const defaultMetadataTitle = 'Open in the meetoo app';
+
 export const headline = 'Finding a time to meet has never been easier.';
 export const copy =
     'meetoo streamlines the process of scheduling meetings and hangouts with your friends, classmates, or colleagues.';
@@ -97,6 +99,7 @@ export const tiktokUrl = 'https://www.tiktok.com/@meetooapp';
 export const instagramUrl = 'https://www.instagram.com/meetooapp';
 export const linkedinUrl = 'https://www.linkedin.com/company/meetoo-app';
 
+export const usernameRegex = /^[a-z0-9._]{2,}$/;
 export const uuidRegex = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
 
 export const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
