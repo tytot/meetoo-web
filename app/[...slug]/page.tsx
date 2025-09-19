@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
                 }
             }
         } else if (url.pathname.startsWith('/meeting/') || url.pathname.startsWith('/meetup/')) {
-            const slug = url.pathname.slice(9);
+            const slug = url.pathname.slice(url.pathname.indexOf('/', 1) + 1);
             if (uuidRegex.test(slug)) {
                 const meeting = await tryGetMeetingById(slug);
                 if (meeting) {
